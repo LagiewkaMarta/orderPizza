@@ -4,9 +4,9 @@ import { Title } from "../../Styles/title";
 import { pizzaRed } from "../../Styles/colors";
 
 const Logo = styled(Title)`
-  font-size: 20px;
+  font-size: 2rem;
   color: #fff;
-  text-shadow: 1px 2px 4px #380502;
+  text-shadow: .1rem .2rem .4rem #380502;
 `;
 const Navbar = ({ className }) => {
   return (
@@ -16,8 +16,10 @@ const Navbar = ({ className }) => {
   );
 };
 export default styled(Navbar)`
+  /* z-index for Navbar to display over Banner */
+  z-index: 2;
   background-color: ${pizzaRed};
-  padding: 10px;
+  padding: 1rem;
   position: fixed;
   width: 100%;
 `;
