@@ -8,12 +8,14 @@ import banner from "./img/banner.jpg";
 
 
 function App() {
+  const [openFood, setOpenFood] = useState();
   return (
     <>
       <GlobalStyle />
       <NavBar />
       <Banner banner={banner}/>
-      <Menu/>
+      <div>{openFood}</div>
+      <Menu setOpenFood={setOpenFood}/>
     </>
   );
 }
