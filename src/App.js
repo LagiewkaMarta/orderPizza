@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import GlobalStyle from "./components/GlobalStyles";
 import NavBar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
