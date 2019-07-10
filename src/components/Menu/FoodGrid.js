@@ -7,6 +7,7 @@ grid-gap: 2rem;
 `
 export const Food = styled.div`
 height: 10rem;
+margin: .8rem .5rem .4rem .5rem;
 padding: 1rem;
 background: url(${({img}) => img}) center / cover no-repeat;
 filter: contrast(80%);
@@ -16,9 +17,12 @@ font-size: 2rem;
 border-radius: .7rem;
 box-shadow: 0 0 .6rem 0 gray;
 opacity: .8;
+transform: translateY(0);
+transition: all .3s;
 &:hover {
     cursor: pointer;
     opacity: 1;
+    transform: translateY(-5px);
 }
 `
 export const FoodLabel = styled.div`
