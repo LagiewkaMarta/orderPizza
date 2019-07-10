@@ -10,15 +10,15 @@ const Menu = ({ className, setOpenFood }) => {
         <>
           <h3>{sectionName}</h3>
           <FoodGrid>
-            {foods.map(({ img, name }) => (
+            {foods.map(food => (
               <Food
                 onClick={() => {
-                  setOpenFood(name);
+                  setOpenFood(food);
                 }}
-                img={img}
+                img={food.img}
               >
                 <FoodLabel>
-                  <h4>{name}</h4>
+                  <h4>{food.name}</h4>
                 </FoodLabel>
               </Food>
             ))}
