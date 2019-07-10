@@ -9,15 +9,16 @@ export const Food = styled.div`
 height: 10rem;
 padding: 1rem;
 background: url(${({img}) => img}) center / cover no-repeat;
-filter: contrast(60%);
--webkit-filter: contrast(60%);
+filter: contrast(80%);
+-webkit-filter: contrast(80%);
 font-family: "Righteous", sans-serif;
 font-size: 2rem;
 border-radius: .7rem;
 box-shadow: 0 0 .6rem 0 gray;
+opacity: .8;
 &:hover {
     cursor: pointer;
-    opacity: .7;
+    opacity: 1;
 }
 `
 export const FoodLabel = styled.div`
