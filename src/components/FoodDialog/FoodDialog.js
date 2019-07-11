@@ -54,9 +54,18 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
-export default function FoodDialog({ openFood, setOpenFood }) {
+export default function FoodDialog({ openFood, setOpenFood, setOrders, orders}) {
   function close() {
     setOpenFood(null);
+  }
+  if(!openFood) return null
+  const order = {
+    name: openFood.name
+  }
+
+  function addToOrder() {
+    setOrders([...orders, order]);
+    close()
   }
   return openFood ? (
     <>
@@ -67,7 +76,7 @@ export default function FoodDialog({ openFood, setOpenFood }) {
         <DialogContent>
         </DialogContent>
         <DialogFooter>
-          <Button text="add product"></Button>
+          <Button type="button" addToOrder={addToOrder} text="add product"></Button>
         </DialogFooter>
       </Dialog>
       <DialogShadow onClick={close} />

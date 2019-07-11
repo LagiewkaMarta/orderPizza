@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Reusables/Button";
 
-const Order = ({className}) => {
+const Order = ({className, orders}) => {
     return (
         <section className={className}>
-            <p>Your order looks pretty empty. </p>
+{orders.length}
             <Button text="order now"/>
         </section>
     )

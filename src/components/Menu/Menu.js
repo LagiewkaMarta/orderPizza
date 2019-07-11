@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { foods } from "../../Data/FoodData";
 import { Food, FoodGrid, FoodLabel } from "./FoodGrid";
-const Menu = ({ className, setOpenFood }) => {
+const Menu = ({ className, setOpenFood, openFood }) => {
   return (
     <section className={className}>
       <h2>Menu</h2>
@@ -14,6 +14,7 @@ const Menu = ({ className, setOpenFood }) => {
               <Food
                 onClick={() => {
                   setOpenFood(food);
+    
                 }}
                 img={food.img}
               >

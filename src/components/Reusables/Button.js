@@ -3,8 +3,14 @@ import styled from "styled-components";
 import {pizzaRed} from "../../Styles/colors";
 
 const Button = (props) => {
+    // different handleClicks depending on the functionality of the button
+    function handleClick(){
+        if (props.addToOrder){
+            props.addToOrder()
+        }
+    }
     return (
-        <button className={props.className}>{props.text}</button>
+        <button onClick={handleClick} className={props.className}>{props.text}</button>
     )
 }
 
