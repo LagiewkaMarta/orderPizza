@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FoodLabel } from "../Menu/FoodGrid";
+import Button from "../Reusables/Button";
 
 const Dialog = styled.section`
   width: 50vw;
@@ -11,6 +12,9 @@ const Dialog = styled.section`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
+  display: flex;
+  flex-direction: column;
+  
 `;
 
 const DialogShadow = styled.div`
@@ -23,6 +27,7 @@ const DialogShadow = styled.div`
   z-index: 3;
 `;
 const DialogBanner = styled.div`
+  width: 100%;
   min-height: 20rem;
   margin-bottom: 2rem;
   ${props => `background: url(${props.img}) center / cover no-repeat;`}
@@ -33,6 +38,22 @@ const DialogBannerName = styled(FoodLabel)`
   transform: translate(1rem, 2rem);
   padding: .5rem;
 `;
+
+const DialogContent = styled.div`
+width: 100%;
+min-height: 30rem;
+max-height: 65vh;
+overflow: auto;
+`
+const DialogFooter = styled.footer`
+width: 100%;
+min-height: 6rem;
+box-shadow: 0 -2px 20px 0 gray;
+margin-top: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+`
 export default function FoodDialog({ openFood, setOpenFood }) {
   function close() {
     setOpenFood(null);
@@ -43,6 +64,11 @@ export default function FoodDialog({ openFood, setOpenFood }) {
         <DialogBanner img={openFood.img}>
           <DialogBannerName>{openFood.name}</DialogBannerName>
         </DialogBanner>
+        <DialogContent>
+        </DialogContent>
+        <DialogFooter>
+          <Button text="add product"></Button>
+        </DialogFooter>
       </Dialog>
       <DialogShadow onClick={close} />
     </>
