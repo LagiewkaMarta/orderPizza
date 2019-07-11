@@ -5,7 +5,7 @@ import Banner from "./components/Banner/Banner";
 import Menu from "./components/Menu/Menu";
 import banner from "./img/banner.jpg";
 import FoodDialog from "./components/FoodDialog/FoodDialog";
-
+import Order from "./components/Order/Order";
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <Banner banner={banner}/>
       <Menu setOpenFood={setOpenFood}/>
       <FoodDialog openFood={openFood} setOpenFood={setOpenFood}/>
+      <Order/>
     </>
   );
 }

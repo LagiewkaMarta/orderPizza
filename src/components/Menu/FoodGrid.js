@@ -4,6 +4,7 @@ export const FoodGrid = styled.div`
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-gap: 2rem;
+width: 60vw;
 `
 export const Food = styled.div`
 height: 10rem;
