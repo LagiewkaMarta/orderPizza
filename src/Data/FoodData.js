@@ -8,16 +8,23 @@ import img7 from "../img/gyro.jpeg";
 import img8 from "../img/healthy-pizza.jpeg";
 import img9 from "../img/sandwich.jpeg";
 
+export function formatPrice(price){
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD"
+  })
+}
+
 export const foodItems = [
-  { name: "Cheese Pizza", img: img1, section: "Pizzas" },
-  { name: "Pepperoni Pizza", img: img2, section: "Pizzas" },
-  { name: "Burger", img: img3, section: "Burgers" },
-  { name: "Chicken Fingers", img: img4, section: "Sides" },
-  { name: "Chicken Pizza", img: img5, section: "Pizzas" },
-  { name: "Fries", img: img6, section: "Sides" },
-  { name: "Gyro", img: img7, section: "Sandwiches" },
-  { name: "Healthy Pizza", img: img8, section: "Pizzas" },
-  { name: "Sandwich", img: img9, section: "Sandwiches" }
+  { name: "Cheese Pizza", img: img1, section: "Pizzas", price: 1 },
+  { name: "Pepperoni Pizza", img: img2, section: "Pizzas", price: 1.5 },
+  { name: "Burger", img: img3, section: "Burgers", price: 3.5 },
+  { name: "Chicken Fingers", img: img4, section: "Sides", price: 4 },
+  { name: "Chicken Pizza", img: img5, section: "Pizzas", price: 2 },
+  { name: "Fries", img: img6, section: "Sides", price: 4 },
+  { name: "Gyro", img: img7, section: "Sandwiches", price: 6 },
+  { name: "Healthy Pizza", img: img8, section: "Pizzas", price: 3 },
+  { name: "Sandwich", img: img9, section: "Sandwiches", price: 6.5 }
 ];
 
 // grouping foods into sections

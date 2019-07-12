@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../Reusables/Button";
+import {formatPrice} from "../../Data/FoodData";
+
 
 const OrderList = styled.ul`
   list-style: none;
@@ -11,6 +13,9 @@ const OrderItem = styled.li`
   width: 100%;
   padding: 1rem;
   margin-top: .3rem;
+  display: grid;
+  grid-template-columns: 2rem 15rem 2rem 6rem;
+  justify-content: space-between;
 `;
 const Order = ({ className, orders }) => {
   return (
@@ -22,7 +27,11 @@ const Order = ({ className, orders }) => {
             Items to be ordered:
             {orders.map(order => {
                 return (
-                    <OrderItem>{order.name}</OrderItem>
+                    <OrderItem>
+                    <span>1</span>
+                    <span>{order.name}</span>
+                    <span>{formatPrice(order.price)}</span>
+                    </OrderItem>
                 )
             })}
         </OrderList>
