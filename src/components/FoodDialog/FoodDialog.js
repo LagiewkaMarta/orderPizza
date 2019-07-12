@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FoodLabel } from "../Menu/FoodGrid";
 import Button from "../Reusables/Button";
-import {formatPrice} from "../../Data/FoodData";
+import { formatPrice } from "../../Data/FoodData";
 
 const Dialog = styled.section`
   width: 50vw;
@@ -15,7 +15,6 @@ const Dialog = styled.section`
   z-index: 4;
   display: flex;
   flex-direction: column;
-  
 `;
 
 const DialogShadow = styled.div`
@@ -37,36 +36,42 @@ const DialogBannerName = styled(FoodLabel)`
   font-family: "Righteous";
   font-size: 3rem;
   transform: translate(1rem, 2rem);
-  padding: .5rem;
+  padding: 0.5rem;
 `;
 
 const DialogContent = styled.div`
-width: 100%;
-min-height: 30rem;
-max-height: 65vh;
-overflow: auto;
-`
+  width: 100%;
+  min-height: 30rem;
+  max-height: 65vh;
+  overflow: auto;
+`;
 const DialogFooter = styled.footer`
-width: 100%;
-min-height: 6rem;
-box-shadow: 0 -2px 20px 0 gray;
-margin-top: auto;
-display: flex;
-justify-content: center;
-align-items: center;
-`
-export default function FoodDialog({ openFood, setOpenFood, setOrders, orders}) {
+  width: 100%;
+  min-height: 6rem;
+  box-shadow: 0 -2px 20px 0 gray;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export default function FoodDialog({
+  openFood,
+  setOpenFood,
+  setOrders,
+  orders
+}) {
   function close() {
     setOpenFood(null);
   }
-  if(!openFood) return null
-  const order = {
-    ...openFood
-  }
 
   function addToOrder() {
+    if (!openFood) return null;
+    const order = {
+      ...openFood
+    };
+  
     setOrders([...orders, order]);
-    close()
+    close();
   }
   return openFood ? (
     <>
@@ -74,10 +79,13 @@ export default function FoodDialog({ openFood, setOpenFood, setOrders, orders}) 
         <DialogBanner img={openFood.img}>
           <DialogBannerName>{openFood.name}</DialogBannerName>
         </DialogBanner>
-        <DialogContent>
-        </DialogContent>
+        <DialogContent />
         <DialogFooter>
-          <Button type="button" addToOrder={addToOrder} text={`Add to order: ${formatPrice(openFood.price)}`}></Button>
+          <Button
+            type="button"
+            addToOrder={addToOrder}
+            text={`Add to order: ${formatPrice(openFood.price)}`}
+          />
         </DialogFooter>
       </Dialog>
       <DialogShadow onClick={close} />

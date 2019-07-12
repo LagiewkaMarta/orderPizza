@@ -14,7 +14,6 @@ const Menu = ({ className, setOpenFood, openFood }) => {
               <Food
                 onClick={() => {
                   setOpenFood(food);
-    
                 }}
                 img={food.img}
               >
