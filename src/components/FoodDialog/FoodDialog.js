@@ -54,7 +54,8 @@ const DialogFooter = styled.footer`
   justify-content: center;
   align-items: center;
 `;
-export default function FoodDialog({
+
+function FoodDialogContainer({
   openFood,
   setOpenFood,
   setOrders,
@@ -91,4 +92,9 @@ export default function FoodDialog({
       <DialogShadow onClick={close} />
     </>
   ) : null;
+}
+
+export default function FoodDialog(props){
+    if(!props.openFood) return null;
+    return <FoodDialogContainer {...props} />
 }
